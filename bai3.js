@@ -37,6 +37,11 @@ const result = function (categories, level = 0) {
       html += result(category.children, level + 1);
     }
   }
+
+  if (level === 0) {
+    html = `<select name="category_id">${html}</select>`;
+  }
+
   return html;
 };
 
